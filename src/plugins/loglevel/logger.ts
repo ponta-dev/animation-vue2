@@ -1,12 +1,14 @@
 import log from 'loglevel'
 import strutil from '@/common/util/string-util'
+import { anyType } from '@/common/type/any-type'
 
 export function setLoggerSetting(level: log.LogLevelDesc) {
-    let factory = log.methodFactory
+    const factory = log.methodFactory
     log.methodFactory = function(methodName, logLevel, loggerName) {
-        let rawMethod = factory(methodName, logLevel, loggerName)
-        return function (...message:any[]) {
-            rawMethod("["+ strutil.getNowDateStr() +"] "+ methodName.toUpperCase()+" :"+ JSON.stringify(message))
+        const rawMethod = factory(methodName, logLevel, loggerName)
+        return function (...message: anyType[]) {
+            const str = strutil.getAnyTypeStr(" ", message)
+            rawMethod("["+ strutil.getNowDateStr() +"] "+ methodName.toUpperCase()+" :"+ str)
         }
     }
     log.setLevel(level)
