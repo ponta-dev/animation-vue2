@@ -1,4 +1,5 @@
 import moment from 'moment'
+// eslint-disable-next-line
 import { anyType } from '../type/any-type'
 
 export default {
