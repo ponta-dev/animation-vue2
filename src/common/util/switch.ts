@@ -1,3 +1,4 @@
+import { AppError } from '../error/error'
 import {mode} from '../interface/mode'
 
 export default {
@@ -12,7 +13,7 @@ export default {
      */
     getModeModule(...modules: mode[]): mode {
         const dev = modules.find((module) => module.mode == 'development')
-        if(dev == undefined) throw Error("development module not found")
+        if(dev == undefined) throw new AppError("development module not found")
 
         let module = modules.find((module) => module.mode == process.env.NODE_ENV)
         if(module == undefined) module = dev
