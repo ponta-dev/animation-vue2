@@ -2,6 +2,7 @@ import { FrameActions, FrameGetters, FrameModule, FrameMutations, FrameState } f
 import timer from '@/common/util/timer'
 import { DATA_USER } from "../data/user-data";
 
+
 const state: FrameState = {
     user: {
         userId: '',

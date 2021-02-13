@@ -1,4 +1,4 @@
-import { appMode } from "@/common/type/app-mode";
+import { mode } from "@/common/interface/mode";
 import { ActionContext } from "vuex";
 import { User } from "../interface/user";
 
@@ -44,8 +44,7 @@ export interface FrameGetters {
     getUser(state: FrameState): User
 }
 
-export interface FrameModule {
-    mode: appMode
+export interface FrameModule extends mode {
     state: FrameState
     mutations: FrameMutations
     actions: FrameActions

@@ -36,10 +36,10 @@ export default Vue.extend({
             overlaySize: 64
         }
     },
-    created: async function() {
+    created: function() {
         log.debug("created Layout.vue")
-        await this.$store.dispatch("loginAction")
-        this.overlay = false
+        this.$store.dispatch("loginAction")
+        .finally(() => this.overlay = false)
     }
 })
 </script>
