@@ -3,11 +3,25 @@
         <v-row v-if="!overlay">
             <v-app-bar app>
             </v-app-bar>
-            <v-content>
+            <v-main>
                 <v-container>
                     userName: {{}}
+                    <v-card>
+                        <v-card-title class="primary white--text">aaa</v-card-title>
+                        <v-card-subtitle class="secondary">aaaaa</v-card-subtitle>
+                        <v-card-text>
+                            aaaaa
+                            <v-alert color="success">success</v-alert>
+                            <v-alert color="error">error</v-alert>
+                            <v-alert color="info">info</v-alert>
+                            <v-alert color="warning">warning</v-alert>
+                        </v-card-text>
+                        <v-card-actions><v-spacer></v-spacer><v-btn class="accent white--text"><v-icon>mdi-check</v-icon>accent</v-btn></v-card-actions>
+                    </v-card>
                 </v-container>
-            </v-content>
+            </v-main>
+            <v-footer app>
+            </v-footer>
         </v-row>
         <v-overlay
             :value="overlay"

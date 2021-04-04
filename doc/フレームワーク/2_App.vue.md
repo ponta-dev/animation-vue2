@@ -36,7 +36,7 @@ v-app以下の基本コンポーネントとして下記がある
 * v-navigation-drawer サイドメニュー
 * v-footer フッター
 * v-bottom-navigation フッターの上位メニュー
-* v-content 本体のコンポーネント
+* v-main 本体のコンポーネント
 
 ### 基本プロパティ
 
