@@ -30,5 +30,13 @@ declare namespace NodeJS {
          * アプリケーションのログレベル
          */
         VUE_APP_LOG_LEVEL: log.LogLevelDesc
+
+        /**
+         * VUE_APP_THEME_DARK  
+         * アプリケーションのテーマのダーク、ライト切り替えフラグ  
+         * true: dark  
+         * false: light
+         */
+        VUE_APP_THEME_DARK: boolean
     }
 }

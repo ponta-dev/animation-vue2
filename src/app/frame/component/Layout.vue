@@ -1,7 +1,7 @@
 <template>
     <v-app>
         <v-row v-if="!overlay">
-            <v-app-bar app>
+            <v-app-bar app color="primary">
             </v-app-bar>
             <v-main>
                 <v-container>
@@ -16,7 +16,7 @@
                             <v-alert color="info">info</v-alert>
                             <v-alert color="warning">warning</v-alert>
                         </v-card-text>
-                        <v-card-actions><v-spacer></v-spacer><v-btn class="accent white--text"><v-icon>mdi-check</v-icon>accent</v-btn></v-card-actions>
+                        <v-card-actions><v-spacer></v-spacer><v-btn class="accent"><v-icon>mdi-check</v-icon>accent</v-btn></v-card-actions>
                     </v-card>
                 </v-container>
             </v-main>
