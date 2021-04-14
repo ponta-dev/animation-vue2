@@ -1,53 +1,37 @@
 <template>
     <v-app>
         <v-row v-if="!overlay">
-            <v-app-bar app color="primary">
-            </v-app-bar>
+            <frame-header>
+            </frame-header>
             <v-main>
-                <v-container>
-                    userName: {{}}
-                    <v-card>
-                        <v-card-title class="primary white--text">aaa</v-card-title>
-                        <v-card-subtitle class="secondary">aaaaa</v-card-subtitle>
-                        <v-card-text>
-                            aaaaa
-                            <v-alert color="success">success</v-alert>
-                            <v-alert color="error">error</v-alert>
-                            <v-alert color="info">info</v-alert>
-                            <v-alert color="warning">warning</v-alert>
-                        </v-card-text>
-                        <v-card-actions><v-spacer></v-spacer><v-btn class="accent"><v-icon>mdi-check</v-icon>accent</v-btn></v-card-actions>
-                    </v-card>
-                </v-container>
+                <router-view></router-view>
             </v-main>
-            <v-footer app>
-            </v-footer>
+            <frame-footer>
+            </frame-footer>
         </v-row>
-        <v-overlay
-            :value="overlay"
-            v-if="overlay"
+        <circular-overlay
+            :overlay="overlay"
         >
-            <v-progress-circular
-                indeterminate
-                :size="overlaySize"
-            >
-            </v-progress-circular>
-        </v-overlay>
+        </circular-overlay>
     </v-app>
 </template>
 <script lang="ts">
 import Vue from 'vue'
 import log from 'loglevel'
+import FrameHeader from './Header.vue'
+import FrameFooter from './Footer.vue'
+import CircularOverlay from '@/common/component/CircularOverlay.vue'
 
 export default Vue.extend({
     name: 'Layout',
     components: {
-        
+        FrameHeader,
+        FrameFooter,
+        CircularOverlay
     },
     data() {
         return {
             overlay: true,
-            overlaySize: 64
         }
     },
     created: function() {
