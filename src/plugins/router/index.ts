@@ -1,12 +1,18 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
+import SampleLayout from '@/app/sample/component/SampleLayout.vue'
 
 Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
   {
     path: '/',
-    name: 'Home',
+    redirect: '/sample'
+  },
+  {
+    path: '/sample',
+    name: 'sample',
+    component: SampleLayout
   }
 ]
 
