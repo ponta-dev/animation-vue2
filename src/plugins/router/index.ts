@@ -13,6 +13,10 @@ const routes: Array<RouteConfig> = [
     path: '/sample',
     name: 'sample',
     component: SampleLayout
+  },
+  {
+    path: '/test',
+    name: 'test'
   }
 ]
 

@@ -16,6 +16,7 @@
             <v-tabs align-with-title>
                 <v-tab
                     v-for="(val, i) in getMenu" :key="i"
+                    @click="routerPush(val.menuPath)"
                 >
                     <strong>{{val.menuName}}</strong>
                 </v-tab>
