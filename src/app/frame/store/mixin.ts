@@ -1,5 +1,6 @@
 import { mode } from "@/common/interface/mode";
 import { ActionContext } from "vuex";
+import { Menu } from "../interface/menu";
 import { User } from "../interface/user";
 
 export interface FrameState {
@@ -8,6 +9,11 @@ export interface FrameState {
      * ユーザ情報
      */
     user: User
+    /**
+     * menu  
+     * メニュー
+     */
+    menu: Menu[]
 }
 
 export interface FrameMutations {
@@ -20,6 +26,15 @@ export interface FrameMutations {
      * ユーザ情報を設定する
      */
     setUser(state: FrameState, user: User): void
+    /**
+     * setMenu  
+     * @param state FrameState
+     * @param menu Menu[]
+     * @returns void  
+     * 
+     * メニューを設定する
+     */
+    setMenu(state: FrameState, menu: Menu[]): void
 }
 
 export interface FrameActions {
@@ -42,6 +57,14 @@ export interface FrameGetters {
      * ユーザ情報を取得する
      */
     getUser(state: FrameState): User
+    /**
+     * getMenu
+     * @param state FrameState
+     * @returns Menu[]
+     * 
+     * メニューを取得する
+     */
+    getMenu(state: FrameState): Menu[]
 }
 
 export interface FrameModule extends mode {

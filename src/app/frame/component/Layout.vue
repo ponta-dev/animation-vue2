@@ -38,6 +38,6 @@ export default Vue.extend({
         log.debug("created Layout.vue")
         this.$store.dispatch("loginAction")
         .finally(() => this.overlay = false)
-    }
+    },
 })
 </script>
